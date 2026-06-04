@@ -7,9 +7,39 @@
 </head>
 <body>
     <form id="myForm" action="api.php" method="post">
-  <input name="name" placeholder="Name">
-  <input name="email" placeholder="Email">
-  <button type="submit">Send</button>
+  <input name="name" placeholder="Имя">
+  <input name="email" placeholder="Почта">
+  <button type="submit">Отправить</button>
 </form>
+
+<pre id="out"></pre>
+
+
+
+<script>
+
+const form = document.getElementById("myForm");
+
+const out = document.getElementById("out");
+
+
+
+form.addEventListener("submit", async (e) => {
+
+  if (!window.fetch) return; // fallback -> 
+
+
+
+ e.preventDefault();
+ const data = Object.fromEntries(new FormData(form))
+ Console.Log("кнопка нажата");
+ Console.Log(data);
+
+  
+
+});
+
+</script>
+
 </body>
 </html>
