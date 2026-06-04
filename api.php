@@ -1,5 +1,6 @@
 <?php
 session_start();
 header("Content-Type: application/json");
-$data = json_decode(file_get_contents("php://input"), true);
-var_dump(data);
+//$data = json_decode(file_get_contents("php://input"), true);
+
+var_dump(1);
