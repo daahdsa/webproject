@@ -32,6 +32,16 @@ form.addEventListener("submit", async (e) => {
 
  e.preventDefault();
  const data = Object.fromEntries(new FormData(form))
+
+const res = await fetch("api.php", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  });
+
+  const json = await res.json();
+  out.textContent = JSON.stringify(json, null, 2);
+
  console.log("кнопка нажата");
  console.log(data);
 
